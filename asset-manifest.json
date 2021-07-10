@@ -1,21 +1,22 @@
 {
   "files": {
-    "main.js": "/mobileCop-admin/static/js/main.d81a7916.chunk.js",
-    "main.js.map": "/mobileCop-admin/static/js/main.d81a7916.chunk.js.map",
+    "main.js": "/mobileCop-admin/static/js/main.dcbb5c26.chunk.js",
+    "main.js.map": "/mobileCop-admin/static/js/main.dcbb5c26.chunk.js.map",
     "runtime-main.js": "/mobileCop-admin/static/js/runtime-main.482c821c.js",
     "runtime-main.js.map": "/mobileCop-admin/static/js/runtime-main.482c821c.js.map",
     "static/css/2.847a128f.chunk.css": "/mobileCop-admin/static/css/2.847a128f.chunk.css",
-    "static/js/2.d6288086.chunk.js": "/mobileCop-admin/static/js/2.d6288086.chunk.js",
-    "static/js/2.d6288086.chunk.js.map": "/mobileCop-admin/static/js/2.d6288086.chunk.js.map",
+    "static/js/2.659d4ab0.chunk.js": "/mobileCop-admin/static/js/2.659d4ab0.chunk.js",
+    "static/js/2.659d4ab0.chunk.js.map": "/mobileCop-admin/static/js/2.659d4ab0.chunk.js.map",
     "index.html": "/mobileCop-admin/index.html",
     "static/css/2.847a128f.chunk.css.map": "/mobileCop-admin/static/css/2.847a128f.chunk.css.map",
-    "static/js/2.d6288086.chunk.js.LICENSE.txt": "/mobileCop-admin/static/js/2.d6288086.chunk.js.LICENSE.txt",
+    "static/js/2.659d4ab0.chunk.js.LICENSE.txt": "/mobileCop-admin/static/js/2.659d4ab0.chunk.js.LICENSE.txt",
+    "static/media/avatar1.21519c3b.png": "/mobileCop-admin/static/media/avatar1.21519c3b.png",
     "static/media/logo.73dcf670.png": "/mobileCop-admin/static/media/logo.73dcf670.png"
   },
   "entrypoints": [
     "static/js/runtime-main.482c821c.js",
     "static/css/2.847a128f.chunk.css",
-    "static/js/2.d6288086.chunk.js",
-    "static/js/main.d81a7916.chunk.js"
+    "static/js/2.659d4ab0.chunk.js",
+    "static/js/main.dcbb5c26.chunk.js"
   ]
 }
