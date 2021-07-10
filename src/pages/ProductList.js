@@ -43,7 +43,7 @@ const ProductList = () => {
         batch.update(docRef, { status: false });
       });
       await batch.commit();
-      console.log('officer collection updated');
+      // console.log('officer collection updated');
       const resp2 = await db.collection('incidents').where('status', '==', 'active').get();
       const batch2 = firebase.firestore().batch();
       resp2.docs.forEach((doc2) => {
@@ -51,9 +51,9 @@ const ProductList = () => {
         batch2.update(docRef, { status: 'resolved' });
       });
       await batch2.commit();
-      console.log('updated all documents');
+      // console.log('updated all documents');
     } catch (error) {
-      console.log('error', error);
+      // console.log('error', error);
     }
   };
 

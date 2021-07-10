@@ -29,7 +29,7 @@ const Register = () => {
       username: val.firstName,
       role: 'Admin'
     }).then((res) => {
-      console.log('res', res);
+      // console.log('res', res);
       firebase.updateProfile(
         {
           firstName: val.firstName,
@@ -37,14 +37,14 @@ const Register = () => {
           role: 'Admin'
         }
       ).then((r) => {
-        console.log('r', r);
+        // console.log('r', r);
         navigate('/login', { replace: true });
       }).catch((e) => {
-        console.log(e);
+        // console.log(e);
         setError(true);
       });
     }).catch((e) => {
-      console.log(e);
+      // console.log(e);
       setError(true);
     });
   };
@@ -83,7 +83,7 @@ const Register = () => {
             }
             onSubmit={(val) => {
               // navigate('/app/dashboard', { replace: true });
-              console.log('values', val);
+              // console.log('values', val);
               createUser(val);
             }}
           >

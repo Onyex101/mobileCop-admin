@@ -1,11 +1,11 @@
 /* eslint-disable arrow-parens */
 import { useEffect } from 'react';
-import { Link as RouterLink, useLocation } from 'react-router-dom';
+import { Link as RouterLink, useLocation, useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import {
   Avatar,
   Box,
-  // Button,
+  Button,
   Divider,
   Drawer,
   Hidden,
@@ -23,7 +23,9 @@ import {
   ChevronsRight as ChevronsRightIcon
 } from 'react-feather';
 import { useSelector } from 'react-redux';
+import { useFirebase } from 'react-redux-firebase';
 import NavItem from './NavItem';
+import adminLogo from '../assets/images/avatar1.png';
 
 const items = [
   {
@@ -71,13 +73,21 @@ const items = [
 const DashboardSidebar = ({ onMobileClose, openMobile }) => {
   const location = useLocation();
   const user = useSelector(state => state.firebase.profile);
-  console.log('profile', user);
+  // console.log('profile', user);
+  const navigate = useNavigate();
+  const firebase = useFirebase();
 
   useEffect(() => {
     if (openMobile && onMobileClose) {
       onMobileClose();
     }
   }, [location.pathname]);
+
+  const logout = () => {
+    firebase.logout().then(() => {
+      navigate('/login', { replace: true });
+    });
+  };
 
   const content = (
     <Box
@@ -97,7 +107,7 @@ const DashboardSidebar = ({ onMobileClose, openMobile }) => {
       >
         <Avatar
           component={RouterLink}
-          src="/static/images/avatars/avatar.png"
+          src={adminLogo}
           sx={{
             cursor: 'pointer',
             width: 64,
@@ -169,6 +179,30 @@ const DashboardSidebar = ({ onMobileClose, openMobile }) => {
           </Button>
         </Box>
       </Box> */}
+      <Box
+        sx={{
+          backgroundColor: 'background.default',
+          m: 2,
+          p: 2
+        }}
+      >
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            pt: 2
+          }}
+        >
+          <Button
+            color="primary"
+            component="a"
+            onClick={logout}
+            variant="contained"
+          >
+            LOGOUT
+          </Button>
+        </Box>
+      </Box>
     </Box>
   );
 

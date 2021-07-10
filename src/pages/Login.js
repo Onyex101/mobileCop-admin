@@ -59,15 +59,15 @@ const Login = () => {
               password: Yup.string().max(255).required('Password is required')
             })}
             onSubmit={(val) => {
-              console.log('submit', val);
+              // console.log('submit', val);
               firebase.login({
                 email: val.email,
                 password: val.password
               }).then((res) => {
-                console.log('login success', res);
+                // console.log('login success', res);
                 navigate('/app/dashboard', { replace: true });
               }).catch((e) => {
-                console.log(e);
+                // console.log(e);
                 setError(true);
               });
             }}
@@ -97,7 +97,7 @@ const Login = () => {
                     Sign in on the internal platform
                   </Typography>
                 </Box>
-                <Grid
+                {/* <Grid
                   container
                   spacing={3}
                 >
@@ -132,8 +132,8 @@ const Login = () => {
                       Login with Google
                     </Button>
                   </Grid>
-                </Grid>
-                <Box
+                </Grid> */}
+                {/* <Box
                   sx={{
                     pb: 1,
                     pt: 3
@@ -146,7 +146,7 @@ const Login = () => {
                   >
                     or login with email address
                   </Typography>
-                </Box>
+                </Box> */}
                 {error && <Alert severity="error">Invalid email or passwword</Alert>}
                 <TextField
                   error={Boolean(touched.email && errors.email)}

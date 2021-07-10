@@ -21,7 +21,7 @@ import { useSelector } from 'react-redux';
 const App = () => {
   const auth = useSelector(state => state.firebase.auth);
   const isAuthenticated = isLoaded(auth) && !isEmpty(auth);
-  console.log('isAuthenticated', isAuthenticated);
+  // console.log('isAuthenticated', isAuthenticated);
   const routes = [
     {
       path: 'app',

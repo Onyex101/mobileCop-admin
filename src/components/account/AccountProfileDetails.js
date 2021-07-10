@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from 'react';
 import {
   Box,
@@ -9,44 +10,39 @@ import {
   Grid,
   TextField
 } from '@material-ui/core';
+import { useFirebase } from 'react-redux-firebase';
 
 const states = [
   {
-    value: 'alabama',
-    label: 'Alabama'
+    value: 'lg',
+    label: 'Lagos State'
   },
   {
-    value: 'new-york',
-    label: 'New York'
+    value: 'abj',
+    label: 'Abuja'
   },
   {
-    value: 'san-francisco',
-    label: 'San Francisco'
+    value: 'ogun',
+    label: 'Ogun State'
   }
 ];
 
-const AccountProfileDetails = (props) => {
-  const [values, setValues] = useState({
-    firstName: 'Katarina',
-    lastName: 'Smith',
-    email: 'demo@devias.io',
-    phone: '',
-    state: 'Alabama',
-    country: 'USA'
-  });
+const AccountProfileDetails = ({ userDetails }) => {
+  const [values, setValues] = useState(userDetails);
+  const firebase = useFirebase();
 
   const handleChange = (event) => {
     setValues({
       ...values,
       [event.target.name]: event.target.value
     });
+    firebase.updateProfile(values);
   };
 
   return (
     <form
       autoComplete="off"
       noValidate
-      {...props}
     >
       <Card>
         <CardHeader
